@@ -1,5 +1,5 @@
-Rate.am USD non-cash/cash converter
-===================================
+Rate.am USD non-cash/cash spread checker
+========================================
 
 This tool is used for calculating the spread between non-cash USD buying prices and cash USD selling prices based on [Rate.AM](https://rate.am) data.
 
