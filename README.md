@@ -10,7 +10,7 @@ You have to choose the bank name in order to get the top-5 deals.
 The first parameter is your target bank name where you're selling your dollars for drams.
 
 ```
-spread.py Araratbank
+./spread.py Araratbank
 ```
 
 Output:
