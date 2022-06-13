@@ -18,7 +18,7 @@ USER_AGENTS = [
 
 
 def parse_table(url, query, user_agent=None):
-    user_agent = random.choice(USER_AGENTS)
+    user_agent = user_agent or random.choice(USER_AGENTS)
 
     req = Request(url, headers={'User-Agent' : user_agent})
     data = parse(urlopen(req)).xpath(query)
