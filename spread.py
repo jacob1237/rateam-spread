@@ -31,7 +31,7 @@ def err(msg, code=1):
 
 def main():
     if len(sys.argv) <= 1:
-        return err('Please provide a bank name\n')
+        return err('Please provide the name of your bank\n')
 
     buy = parse_table(URL_NONCASH, XPATH_BUY_RATES_NONCASH)
 
@@ -44,11 +44,17 @@ def main():
 
     sell = parse_table(URL_CASH, XPATH_SELL_RATES_CASH)
 
-    print('Best USD spread\n---------------')
+    print(
+        "Exchange Rates\n"
+        "---------------\n"
+        f"{target_bank} Non-Cash USD: {rate:.2f}\n\n"
+        "Best USD Spread\n"
+        "---------------\n"
+    )
 
     for name in sorted(sell, key=sell.get)[0:5]:
         price = float(sell[name])
-        print('{0}: {1:.3f}%'.format(name.strip(), (1.0 - rate/price) * 100))
+        print('{0}: \033[1m{1:.3f}%\033[0m, Rate: {2:.2f}'.format(name.strip(), (1.0 - rate/price) * 100, price))
 
     return 0
 
